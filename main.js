@@ -36,7 +36,7 @@ app.whenReady().then(() => {
   createWindow();
 });
 
-ipcMain.handle("search-google", async (event, searchTerm) => {
+ipcMain.handle("start-task", async (event, task) => {
   const selectedBrowser = await getBrowserFromStore();
   if (!selectedBrowser || !isValidBrowser(selectedBrowser)) {
     throw new Error("Invalid or no browser selected");
